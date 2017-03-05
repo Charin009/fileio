@@ -27,7 +27,7 @@ import stopwatch.TimeTask;
  * includes files in your project's src/ directory.  
  * It is a standard technique for opening resources.
  * 
- * @author 
+ * @author Charin Tantrakul
  *
  */
 public class FileCopyTask implements Runnable {
@@ -134,11 +134,10 @@ public class FileCopyTask implements Runnable {
 		TimeTask timer = new TimeTask();
 		// Define a FileUtil task to copy a file byte by byte.
 		// This is an anonymous class that extends FileUtilTimer.
-		//TODO Can you make this code shorter by passing the filenames
 		// as parameters to the superclass constructor?
 		
 		//Copy file Byte-By-byte.
-		FileCopyTask task1 = new FileCopyTask(inputFilename,"/temp/filecopy1.txt") {
+		FileCopyTask task1 = new FileCopyTask(inputFilename,"/Users/kaizofaria/Desktop/filecopy1.txt") {
 			public void run() {
 				FileUtil.copy(in, out);
 			}
@@ -149,7 +148,7 @@ public class FileCopyTask implements Runnable {
 		timer.measureAndPrint(task1);  // wasn't that easy?
 		
 		//Copy a file using a byte array of size 1KB
-		FileCopyTask task2 = new FileCopyTask(inputFilename,"/temp/filecopy2.txt") {
+		FileCopyTask task2 = new FileCopyTask(inputFilename,"/Users/kaizofaria/Desktop/filecopy2.txt") {
 			public void run() {
 				FileUtil.copy(in, out,SIZE);
 			}
@@ -160,7 +159,7 @@ public class FileCopyTask implements Runnable {
 		timer.measureAndPrint(task2);
 		
 		//Copy a file using a byte array of size 4KB
-		FileCopyTask task3 = new FileCopyTask(inputFilename,"/temp/filecopy3.txt") {
+		FileCopyTask task3 = new FileCopyTask(inputFilename,"/Users/kaizofaria/Desktop/filecopy3.txt") {
 			public void run() {
 				FileUtil.copy(in, out,4*SIZE);
 			}
@@ -171,7 +170,7 @@ public class FileCopyTask implements Runnable {
 		timer.measureAndPrint(task3);
 		
 		//Copy a file using a byte array of size 64KB
-		FileCopyTask task4 = new FileCopyTask(inputFilename,"/temp/filecopy4.txt") {
+		FileCopyTask task4 = new FileCopyTask(inputFilename,"/Users/kaizofaria/Desktop/filecopy4.txt") {
 			public void run() {
 				FileUtil.copy(in, out,64*SIZE);
 			}
@@ -182,7 +181,7 @@ public class FileCopyTask implements Runnable {
 		timer.measureAndPrint(task4);
 		
 		//Copy a file using BufferedReader
-		FileCopyTask task5 = new FileCopyTask(inputFilename,"/temp/filecopy5.txt") {
+		FileCopyTask task5 = new FileCopyTask(inputFilename,"/Users/kaizofaria/Desktop/filecopy5.txt") {
 			public void run() {
 				FileUtil.bcopy(in, out);
 			}

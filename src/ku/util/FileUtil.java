@@ -8,6 +8,11 @@ import java.io.BufferedReader;
 
 public class FileUtil {
 
+	/**
+	 * Copy file byte by byte 
+	 * @param in String or file that you want to copy
+	 * @param out name of file that you want to make it same parameter 'in'.
+	 */
 	static void copy(InputStream in,OutputStream out) {
 		try{
 			int b = in.read(); 
@@ -22,7 +27,13 @@ public class FileUtil {
 			throw new RuntimeException();
 		}
 	}
-
+	
+	/**
+	 * Copy file by using array of byte.
+	 * @param in String or file that you want to copy
+	 * @param out name of file that you want to make it same parameter 'in'.
+	 * @param blocksize size of byte array 
+	 */
 	static void copy(InputStream in,OutputStream out,int blocksize){
 		try{
 			byte[] buffer = new byte[blocksize];
@@ -39,6 +50,11 @@ public class FileUtil {
 		}
 	}
 
+	/**
+	 * Copy file by using BufferedReader and PrintWriter 
+	 * @param in String or file that you want to copy
+	 * @param out name of file that you want to make it same parameter 'in'.
+	 */
 	static void bcopy(InputStream in,OutputStream out){
 		try{
 			BufferedReader read = new BufferedReader(new InputStreamReader(in));
