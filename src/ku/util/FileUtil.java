@@ -6,6 +6,11 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.BufferedReader;
 
+/**
+ * FileUtil copy original file and create copy text file
+ * @author Charin Tantrakul
+ *
+ */
 public class FileUtil {
 
 	/**
